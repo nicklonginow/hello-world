@@ -1,0 +1,7 @@
+steps:
+        - name: 'gcr.io/cloud-builders/docker'
+          args: ['build' '-t', 'gcr.io/jenkins-220314/hello-world:1.0.$BUILD_ID', '.']
+          timeout: 180s
+        - name: 'gcr.io/cloud-builders/docker'
+          args: ['push', 'gcr.io/jenkins-220314/hello-world:1.0.$BUILD_ID']
+
